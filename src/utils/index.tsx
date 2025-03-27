@@ -1,4 +1,4 @@
-import { Calendar, CalendarDays, CogIcon, Grid2X2, Inbox } from "lucide-react";
+import { Calendar, CalendarDays, CogIcon, Grid2X2, Inbox, NotepadText } from "lucide-react";
 
 export const primaryNavItems = [
   {
@@ -15,7 +15,7 @@ export const primaryNavItems = [
   {
     name: "Upcoming",
     link: "/dashboard/upcomming",
-    icon: <CalendarDays className="w-4 h-4" />,
+    icon: <NotepadText className="w-4 h-4" />,
   },
   {
     id: "filters",

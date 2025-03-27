@@ -26,6 +26,15 @@ export const get = query({
 });
 
 
+export const getAllTodosOfUser = query({
+  args: {userId : v.string() },
+  handler: async (ctx, {userId}) => {
+    const user = await ctx.db.query("users").filter(q => q.eq(q.field("clerkId"), userId)).first()
+    return await ctx.db.query("todos").filter(q => q.eq(q.field("userId"), user?._id)).collect()
+  }
+})
+
+
 export const getCompletedTodosByProjectId = query({
   args: {
     projectId: v.id("projects"),

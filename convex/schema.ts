@@ -45,13 +45,13 @@ export default defineSchema({
     labels : defineTable({
         name : v.string(),
         type : v.union(v.literal("user"), v.literal("system")),
-        userId : v.union(v.id("users"), v.null())
+        userId : v.optional(v.union(v.id("users"), v.null()))
     }),
     
     projects : defineTable({
         name : v.string(),
         type : v.union(v.literal("user"), v.literal("system")),
-        userId : v.union(v.id("users"), v.null())
+        userId : v.optional(v.union(v.id("users"), v.null()))
     }),
 
 })
